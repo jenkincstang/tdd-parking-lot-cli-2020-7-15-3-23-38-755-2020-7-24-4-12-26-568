@@ -36,6 +36,6 @@ public class ParkingBoy {
     }
 
     public String parkingCarToParkingLot(ParkingLot parkingLot) {
-        return null;
+        return "No Position";
     }
 }
