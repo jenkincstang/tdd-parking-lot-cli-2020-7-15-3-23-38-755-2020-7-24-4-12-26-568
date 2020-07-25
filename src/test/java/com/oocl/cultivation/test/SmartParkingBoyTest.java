@@ -43,6 +43,20 @@ public class SmartParkingBoyTest {
     }
 
     @Test
+    public void should_return_a_responding_car_when_fetching_responding_car_given_a_parking_boy_with_a_ticket(){
+        //given
+        Ticket ticket = new Ticket(1);
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy();
+        LinkedList<Car> cars = initCarsInParkingLot();
+
+        //when
+        Car resultCar = smartParkingBoy.fetchRespondingCar(ticket,cars);
+
+        //then
+        Assertions.assertEquals(new Car(1),resultCar);
+    }
+
+    @Test
     public void should_return_parking_lot_of_rank_x_contains_more_empty_positions_when_parking_car_given_a_smart_parking_boy_with_multiple_parking_lot(){
         //given
         LinkedList<ParkingLot> parkingLots = initParkingLots();
@@ -65,5 +79,14 @@ public class SmartParkingBoyTest {
         parkingLots.add(thirdParkingLot);
 
         return parkingLots;
+    }
+
+    public LinkedList<Car> initCarsInParkingLot(){
+        LinkedList<Car> cars = new LinkedList<>();
+        cars.add(new Car(1));
+        cars.add(new Car(2));
+        cars.add(new Car(3));
+
+        return cars;
     }
 }
