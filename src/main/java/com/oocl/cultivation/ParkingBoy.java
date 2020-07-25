@@ -50,4 +50,8 @@ public class ParkingBoy {
     public String parkingNullCar(Car car) {
         return "No Car";
     }
+
+    public String chooseParkingLotWithPosition(LinkedList<ParkingLot> parkingLots) {
+        return null;
+    }
 }

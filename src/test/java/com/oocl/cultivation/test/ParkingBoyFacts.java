@@ -226,5 +226,33 @@ class ParkingBoyFacts {
         Assertions.assertEquals("Unrecognized parking ticket.",usedTicketResult);
     }
 
+    /**
+     * //given
+     * a parkingboy
+     * multiple parking lot
+     * //when
+     * parkingCar
+     * //then
+     * return "X parking lot can park car"
+     */
+    @Test
+    public void should_return_x_parking_lot_can_park_car_when_parking_car_given_a_parking_boy_with_multiple_parking_lot(){
+        //given
+        LinkedList<ParkingLot> parkingLots = new LinkedList<>();
+        ParkingLot firstParkingLot = new ParkingLot();
+        firstParkingLot.setRemainingCapacity(0);
+        ParkingLot secondParkingLot = new ParkingLot();
+        secondParkingLot.setRemainingCapacity(0);
+        ParkingLot thirdParkingLot = new ParkingLot();
+        thirdParkingLot.setRemainingCapacity(1);
+        parkingLots.add(firstParkingLot);
+        parkingLots.add(secondParkingLot);
+        parkingLots.add(thirdParkingLot);
 
+        ParkingBoy parkingBoy = new ParkingBoy();
+        //when
+        String result = parkingBoy.chooseParkingLotWithPosition(parkingLots);
+        //then
+        Assertions.assertEquals("Parking lot of rank 3 can park car",result);
+    }
 }
