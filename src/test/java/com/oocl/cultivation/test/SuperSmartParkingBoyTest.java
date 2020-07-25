@@ -69,7 +69,41 @@ public class SuperSmartParkingBoyTest {
         Assertions.assertEquals("Please provide your parking ticket.",result);
     }
 
+    @Test
+    public void should_return_tips_about_used_ticket_when_fetching_responding_car_given_a_super_smart_parking_boy_with_a_used_ticket(){
+        //given
+        Ticket ticket = getUsedTicket();
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
 
+        //when
+        String result = superSmartParkingBoy.fetchRespondingCarWithUsedTicket(ticket);
+
+        //then
+        Assertions.assertEquals("Used Ticket",result);
+    }
+
+    public Ticket getUsedTicket(){
+        Ticket ticket = new Ticket(1);
+        ticket.setUsed(true);
+
+        return ticket;
+    }
+
+    @Test
+    public void should_return_tips_about_no_position_when_parking_car_given_a_super_smart_parking_boy_and_a_parkinglot(){
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        parkingLot.setRemainingCapacity(0);
+
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+
+
+        //when
+        String result = superSmartParkingBoy.parkingCarToParkingLot(parkingLot);
+
+        //then
+        Assertions.assertEquals("Not enough position.",result);
+    }
     /**
      * //given
      * a superSmartParkingBoy
