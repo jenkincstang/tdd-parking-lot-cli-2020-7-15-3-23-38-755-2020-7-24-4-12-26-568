@@ -123,6 +123,18 @@ public class SmartParkingBoyTest {
     }
 
     @Test
+    public void should_return_tips_about_no_car_when_parking_car_given_a_smart_parking_boy_with_no_car(){
+        //given
+        Car car = null;
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy();
+        //when
+        String result = smartParkingBoy.parkingNullCar(car);
+        //then
+        Assertions.assertEquals("No Car",result);
+    }
+
+
+    @Test
     public void should_return_parking_lot_of_rank_x_contains_more_empty_positions_when_parking_car_given_a_smart_parking_boy_with_multiple_parking_lot(){
         //given
         LinkedList<ParkingLot> parkingLots = initParkingLots();
