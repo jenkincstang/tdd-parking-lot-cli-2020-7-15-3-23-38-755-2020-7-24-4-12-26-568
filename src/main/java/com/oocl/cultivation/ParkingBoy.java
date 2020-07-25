@@ -38,4 +38,8 @@ public class ParkingBoy {
     public String parkingCarToParkingLot(ParkingLot parkingLot) {
         return "No Position";
     }
+
+    public String parkingParkedCar(Car car) {
+        return null;
+    }
 }

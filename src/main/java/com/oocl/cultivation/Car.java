@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class Car {
     private int id;
-
+    private boolean isParked;
     public Car(int id){
         this.id = id;
     }
@@ -19,6 +19,14 @@ public class Car {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isParked() {
+        return isParked;
+    }
+
+    public void setParked(boolean parked) {
+        isParked = parked;
     }
 
     @Override

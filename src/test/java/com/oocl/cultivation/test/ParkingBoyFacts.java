@@ -171,4 +171,29 @@ class ParkingBoyFacts {
         //then
         Assertions.assertEquals("No Position",result);
     }
+
+    /**
+     * //given
+     * a parked car
+     * a parkingboy
+     *
+     * //when
+     * parkingingCar
+     *
+     * //then
+     * return "Parked Car"
+     */
+    @Test
+    public void should_return_tips_about_parked_car_when_parking_car_given_a_parking_boy_with_a_parked_car(){
+        //given
+        Car car = new Car(1);
+        car.setParked(true);
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        String result = parkingBoy.parkingParkedCar(car);
+
+        //then
+        Assertions.assertEquals("Parked Car",result);
+    }
 }
