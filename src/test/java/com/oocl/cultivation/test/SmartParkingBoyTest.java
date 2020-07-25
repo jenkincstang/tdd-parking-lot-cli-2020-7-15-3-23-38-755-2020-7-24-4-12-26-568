@@ -90,6 +90,22 @@ public class SmartParkingBoyTest {
     }
 
     @Test
+    public void should_return_tips_about_no_position_when_parking_car_given_a_smart_parking_boy_and_a_parkinglot(){
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        parkingLot.setRemainingCapacity(0);
+
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy();
+
+
+        //when
+        String result = smartParkingBoy.parkingCarToParkingLot(parkingLot);
+
+        //then
+        Assertions.assertEquals("Not enough position.",result);
+    }
+
+    @Test
     public void should_return_parking_lot_of_rank_x_contains_more_empty_positions_when_parking_car_given_a_smart_parking_boy_with_multiple_parking_lot(){
         //given
         LinkedList<ParkingLot> parkingLots = initParkingLots();
