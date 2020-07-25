@@ -135,26 +135,27 @@ class ParkingBoyFacts {
 
     /**
      * //given
-     * a parkinglot
      * a parkingboy
-     *
+     * a parkinglot
      * //when
-     * parkingingCar
-     *
+     * parkingCar
      * //then
-     * return "No Position"
+     * return "Not enough position."
      */
     @Test
     public void should_return_tips_about_no_position_when_parking_car_given_a_parking_boy_and_a_parkinglot(){
         //given
         ParkingLot parkingLot = new ParkingLot();
+        parkingLot.setRemainingCapacity(0);
+
         ParkingBoy parkingBoy = new ParkingBoy();
+
 
         //when
         String result = parkingBoy.parkingCarToParkingLot(parkingLot);
 
         //then
-        Assertions.assertEquals("No Position",result);
+        Assertions.assertEquals("Not enough position.",result);
     }
 
     /**

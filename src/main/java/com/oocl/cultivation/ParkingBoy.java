@@ -39,7 +39,8 @@ public class ParkingBoy {
     }
 
     public String parkingCarToParkingLot(ParkingLot parkingLot) {
-        return "No Position";
+        if (parkingLot.getRemainingCapacity() == 0)return "Not enough position.";
+        return null;
     }
 
     public String parkingParkedCar(Car car) {
