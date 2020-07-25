@@ -44,6 +44,6 @@ public class ParkingBoy {
     }
 
     public String parkingNullCar(Car car) {
-        return null;
+        return "No Car";
     }
 }
