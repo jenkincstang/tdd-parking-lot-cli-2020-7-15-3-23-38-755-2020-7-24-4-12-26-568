@@ -23,7 +23,7 @@ class ParkingBoyFacts {
     @Test
     public void should_return_a_ticket_when_parking_car_given_a_parking_boy_with_a_car(){
         //given
-        Car car = new Car();
+        Car car = new Car(1);
         ParkingBoy parkingBoy = new ParkingBoy();
 
         //when
@@ -52,6 +52,6 @@ class ParkingBoyFacts {
         Car resultCar = parkingBoy.fetchCar(ticket);
 
         //then
-        Assertions.assertEquals(new Car(),resultCar);
+        Assertions.assertEquals(new Car(1),resultCar);
     }
 }
