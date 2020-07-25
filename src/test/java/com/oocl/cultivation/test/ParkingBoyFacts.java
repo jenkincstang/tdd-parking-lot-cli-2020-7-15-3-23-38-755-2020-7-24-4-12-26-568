@@ -32,4 +32,26 @@ class ParkingBoyFacts {
         //then
         Assertions.assertEquals(new Ticket(1),resultTicket);
     }
+
+    /**
+     * //given
+     * a ticket
+     * a parkingboy
+     * //when
+     * fetching car
+     * //then
+     * return a car
+     */
+    @Test
+    public void should_return_a_car_when_fetching_car_given_a_parking_boy_with_a_ticket(){
+        //given
+        Ticket ticket = new Ticket(1);
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        Car resultCar = parkingBoy.fetchCar(ticket);
+
+        //then
+        Assertions.assertEquals(new Car(),resultCar);
+    }
 }

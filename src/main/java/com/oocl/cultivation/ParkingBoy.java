@@ -8,4 +8,8 @@ public class ParkingBoy {
     public Ticket parkCar(Car car) {
         return new Ticket(1);
     }
+
+    public Car fetchCar(Ticket ticket) {
+        return null;
+    }
 }
