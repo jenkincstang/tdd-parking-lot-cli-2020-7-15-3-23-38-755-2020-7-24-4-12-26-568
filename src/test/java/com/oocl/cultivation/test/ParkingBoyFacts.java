@@ -72,16 +72,22 @@ class ParkingBoyFacts {
         //given
         Ticket ticket = new Ticket(1);
         ParkingBoy parkingBoy = new ParkingBoy();
-        LinkedList<Car> cars = new LinkedList<>();
-        cars.add(new Car(1));
-        cars.add(new Car(2));
-        cars.add(new Car(3));
+        LinkedList<Car> cars = initCarsInParkingLot();
 
         //when
         Car resultCar = parkingBoy.fetchRespondingCar(ticket,cars);
 
         //then
         Assertions.assertEquals(new Car(1),resultCar);
+    }
+
+    public LinkedList<Car> initCarsInParkingLot(){
+        LinkedList<Car> cars = new LinkedList<>();
+        cars.add(new Car(1));
+        cars.add(new Car(2));
+        cars.add(new Car(3));
+
+        return cars;
     }
 
 }
