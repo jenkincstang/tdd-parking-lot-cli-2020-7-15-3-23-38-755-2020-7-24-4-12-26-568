@@ -129,7 +129,24 @@ public class SuperSmartParkingBoyTest {
         //then
         Assertions.assertEquals("No Car",result);
     }
+    @Test
+    public void should_return_tips_about_wrong_ticket_when_fetching_responding_car_given_a_super_smart_parking_boy_with_a_wrong_ticket(){
+        //given
+        Ticket illegalTicket = new Ticket(1);
+        illegalTicket.setLegal(false);
 
+        Ticket usedTicket = new Ticket(2);
+        usedTicket.setUsed(true);
+
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+
+        //when
+        String illegalTicketResult = superSmartParkingBoy.fetchRespondingCarWithWrongTicket(illegalTicket);
+        String usedTicketResult = superSmartParkingBoy.fetchRespondingCarWithWrongTicket(usedTicket);
+        //then
+        Assertions.assertEquals("Unrecognized parking ticket.",illegalTicketResult);
+        Assertions.assertEquals("Unrecognized parking ticket.",usedTicketResult);
+    }
 
 
 
