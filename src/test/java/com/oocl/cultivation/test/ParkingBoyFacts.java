@@ -90,4 +90,28 @@ class ParkingBoyFacts {
         return cars;
     }
 
+    /**
+     * //given
+     * a parkingboy
+     * a wrong ticket
+     *
+     * //when
+     * fetchRespondingCar
+     *
+     * //then
+     * return null
+     */
+    @Test
+    public void should_return_tips_about_wrong_ticket_when_fetching_responding_car_given_a_parking_boy_with_a_wrong_ticket(){
+        //given
+        Ticket ticket = new Ticket(1);
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        String result = parkingBoy.fetchRespondingCarWithWrongTicket(ticket);
+
+        //then
+        Assertions.assertEquals("Wrong Ticket",result);
+    }
+
 }
