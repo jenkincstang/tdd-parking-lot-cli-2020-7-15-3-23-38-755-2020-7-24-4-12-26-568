@@ -104,6 +104,25 @@ public class SuperSmartParkingBoyTest {
         //then
         Assertions.assertEquals("Not enough position.",result);
     }
+    @Test
+    public void should_return_tips_about_parked_car_when_parking_car_given_a_super_smart_parking_boy_with_a_parked_car(){
+        //given
+        Car car = getParkedCar();
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+        //when
+        String result = superSmartParkingBoy.parkingParkedCar(car);
+        //then
+        Assertions.assertEquals("Parked Car",result);
+    }
+    public Car getParkedCar(){
+        Car car = new Car(1);
+        car.setParked(true);
+        return car;
+    }
+
+
+
+
     /**
      * //given
      * a superSmartParkingBoy
