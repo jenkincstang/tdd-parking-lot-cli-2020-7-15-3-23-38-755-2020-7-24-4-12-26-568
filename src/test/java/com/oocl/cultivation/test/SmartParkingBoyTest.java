@@ -133,7 +133,24 @@ public class SmartParkingBoyTest {
         Assertions.assertEquals("No Car",result);
     }
 
+    @Test
+    public void should_return_tips_about_wrong_ticket_when_fetching_responding_car_given_a_smart_parking_boy_with_a_wrong_ticket(){
+        //given
+        Ticket illegalTicket = new Ticket(1);
+        illegalTicket.setLegal(false);
 
+        Ticket usedTicket = new Ticket(2);
+        usedTicket.setUsed(true);
+
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy();
+
+        //when
+        String illegalTicketResult = smartParkingBoy.fetchRespondingCarWithWrongTicket(illegalTicket);
+        String usedTicketResult = smartParkingBoy.fetchRespondingCarWithWrongTicket(usedTicket);
+        //then
+        Assertions.assertEquals("Unrecognized parking ticket.",illegalTicketResult);
+        Assertions.assertEquals("Unrecognized parking ticket.",usedTicketResult);
+    }
     @Test
     public void should_return_parking_lot_of_rank_x_contains_more_empty_positions_when_parking_car_given_a_smart_parking_boy_with_multiple_parking_lot(){
         //given
