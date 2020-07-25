@@ -30,6 +30,19 @@ public class SmartParkingBoyTest {
     }
 
     @Test
+    public void should_return_a_car_when_fetching_car_given_a_smart_parking_boy_with_a_ticket(){
+        //given
+        Ticket ticket = new Ticket(1);
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy();
+
+        //when
+        Car resultCar = smartParkingBoy.fetchCar(ticket);
+
+        //then
+        Assertions.assertEquals(new Car(1),resultCar);
+    }
+
+    @Test
     public void should_return_parking_lot_of_rank_x_contains_more_empty_positions_when_parking_car_given_a_smart_parking_boy_with_multiple_parking_lot(){
         //given
         LinkedList<ParkingLot> parkingLots = initParkingLots();
