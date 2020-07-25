@@ -16,6 +16,9 @@ public class ParkingBoy {
     }
 
     public Car fetchRespondingCar(Ticket ticket, LinkedList<Car> cars) {
+        for (Car car:cars) {
+            if (car.getId() == ticket.getId()) return car;
+        }
         return null;
     }
 }
