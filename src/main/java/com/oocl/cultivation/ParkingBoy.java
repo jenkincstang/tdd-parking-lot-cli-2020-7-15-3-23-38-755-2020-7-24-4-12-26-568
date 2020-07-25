@@ -16,7 +16,7 @@ public class ParkingBoy {
     }
 
     public Car fetchRespondingCar(Ticket ticket, LinkedList<Car> cars) {
-        for (Car car:cars) {
+        for (Car car : cars) {
             if (car.getId() == ticket.getId()) return car;
         }
         return null;
@@ -34,12 +34,12 @@ public class ParkingBoy {
     }
 
     public String fetchRespondingCarWithUsedTicket(Ticket ticket) {
-        if(ticket.isUsed()) return "Used Ticket";
+        if (ticket.isUsed()) return "Used Ticket";
         return null;
     }
 
     public String parkingCarToParkingLot(ParkingLot parkingLot) {
-        if (parkingLot.getRemainingCapacity() == 0)return "Not enough position.";
+        if (parkingLot.getRemainingCapacity() == 0) return "Not enough position.";
         return null;
     }
 
@@ -52,8 +52,8 @@ public class ParkingBoy {
     }
 
     public String chooseParkingLotWithPosition(LinkedList<ParkingLot> parkingLots) {
-        for (int indexOfParkingLots = 0;indexOfParkingLots < parkingLots.size();indexOfParkingLots++) {
-            if (parkingLots.get(indexOfParkingLots).getRemainingCapacity()>0)
+        for (int indexOfParkingLots = 0; indexOfParkingLots < parkingLots.size(); indexOfParkingLots++) {
+            if (parkingLots.get(indexOfParkingLots).getRemainingCapacity() > 0)
                 return "Parking lot of rank " + (indexOfParkingLots + 1) + " can park car";
         }
         return null;

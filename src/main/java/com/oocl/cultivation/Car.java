@@ -9,7 +9,8 @@ import java.util.Objects;
 public class Car {
     private int id;
     private boolean isParked;
-    public Car(int id){
+
+    public Car(int id) {
         this.id = id;
     }
 

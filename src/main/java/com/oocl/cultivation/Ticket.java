@@ -13,7 +13,7 @@ public class Ticket {
     private boolean isUsed;
     private boolean isLegal;
 
-    public Ticket(int id){
+    public Ticket(int id) {
         this.id = id;
     }
 
