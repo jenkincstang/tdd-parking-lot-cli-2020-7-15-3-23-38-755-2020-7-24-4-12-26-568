@@ -34,4 +34,8 @@ public class ParkingBoy {
         if(ticket.isUsed()) return "Used Ticket";
         return null;
     }
+
+    public String parkingCarToParkingLot(ParkingLot parkingLot) {
+        return null;
+    }
 }

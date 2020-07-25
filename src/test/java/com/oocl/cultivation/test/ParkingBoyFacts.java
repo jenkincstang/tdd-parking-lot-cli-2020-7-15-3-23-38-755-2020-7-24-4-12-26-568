@@ -2,11 +2,11 @@ package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.Car;
 import com.oocl.cultivation.ParkingBoy;
+import com.oocl.cultivation.ParkingLot;
 import com.oocl.cultivation.Ticket;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import javax.security.auth.callback.TextInputCallback;
 import java.util.LinkedList;
 
 class ParkingBoyFacts {
@@ -148,4 +148,27 @@ class ParkingBoyFacts {
         return ticket;
     }
 
+    /**
+     * //given
+     * a parkinglot
+     * a parkingboy
+     *
+     * //when
+     * parkingingCar
+     *
+     * //then
+     * return "No Position"
+     */
+    @Test
+    public void should_return_tips_about_no_position_when_parking_car_given_a_parking_boy_and_a_parkinglot(){
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        String result = parkingBoy.parkingCarToParkingLot(parkingLot);
+
+        //then
+        Assertions.assertEquals("No Position",result);
+    }
 }
