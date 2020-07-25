@@ -29,7 +29,8 @@ public class ParkingBoy {
     }
 
     public String fetchRespondingCarWithNoTicket(Ticket ticket) {
-        return "No Ticket";
+        if (ticket == null) return "Please provide your parking ticket.";
+        return null;
     }
 
     public String fetchRespondingCarWithUsedTicket(Ticket ticket) {

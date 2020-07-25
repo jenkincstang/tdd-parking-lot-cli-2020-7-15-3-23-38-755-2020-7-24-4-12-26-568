@@ -91,7 +91,15 @@ class ParkingBoyFacts {
         return cars;
     }
 
-
+    /**
+     * //given
+     * no ticket
+     * a parkingboy
+     * //when
+     * fetchingCar
+     * //then
+     * return "Please provide your parking ticket."
+     */
     @Test
     public void should_return_tips_about_none_ticket_when_fetching_responding_car_given_a_parking_boy_with_no_ticket(){
         //given
@@ -102,7 +110,7 @@ class ParkingBoyFacts {
         String result = parkingBoy.fetchRespondingCarWithNoTicket(ticket);
 
         //then
-        Assertions.assertEquals("No Ticket",result);
+        Assertions.assertEquals("Please provide your parking ticket.",result);
     }
 
     @Test
