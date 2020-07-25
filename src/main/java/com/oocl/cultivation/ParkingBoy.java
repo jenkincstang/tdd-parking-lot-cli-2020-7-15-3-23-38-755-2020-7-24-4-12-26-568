@@ -8,7 +8,7 @@ import java.util.LinkedList;
  */
 public class ParkingBoy {
     public Ticket parkCar(Car car) {
-        return new Ticket(1);
+        return new Ticket(car.getId());
     }
 
     public Car fetchCar(Ticket ticket) {

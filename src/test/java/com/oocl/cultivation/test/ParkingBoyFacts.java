@@ -19,7 +19,7 @@ class ParkingBoyFacts {
         Ticket resultTicket = parkingBoy.parkCar(car);
 
         //then
-        Assertions.assertEquals(new Ticket(1), resultTicket);
+        Assertions.assertEquals(new Ticket(car.getId()), resultTicket);
     }
 
     @Test
