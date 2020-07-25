@@ -52,6 +52,10 @@ public class ParkingBoy {
     }
 
     public String chooseParkingLotWithPosition(LinkedList<ParkingLot> parkingLots) {
+        for (int indexOfParkingLots = 0;indexOfParkingLots < parkingLots.size();indexOfParkingLots++) {
+            if (parkingLots.get(indexOfParkingLots).getRemainingCapacity()>0)
+                return "Parking lot of rank " + (indexOfParkingLots + 1) + " can park car";
+        }
         return null;
     }
 }

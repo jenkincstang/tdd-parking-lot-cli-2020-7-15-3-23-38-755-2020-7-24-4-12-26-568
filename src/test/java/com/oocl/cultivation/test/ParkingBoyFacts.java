@@ -236,7 +236,7 @@ class ParkingBoyFacts {
      * return "X parking lot can park car"
      */
     @Test
-    public void should_return_x_parking_lot_can_park_car_when_parking_car_given_a_parking_boy_with_multiple_parking_lot(){
+    public void should_return_parking_lot_of_rank_x_can_park_car_when_parking_car_given_a_parking_boy_with_multiple_parking_lot(){
         //given
         LinkedList<ParkingLot> parkingLots = new LinkedList<>();
         ParkingLot firstParkingLot = new ParkingLot();
