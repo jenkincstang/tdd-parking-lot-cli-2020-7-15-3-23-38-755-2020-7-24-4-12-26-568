@@ -23,7 +23,7 @@ public class ParkingBoy {
     }
 
     public String fetchRespondingCarWithWrongTicket(Ticket ticket) {
-        if (!ticket.isLegal()) return "Wrong Ticket";
+        if (!ticket.isLegal() || ticket.isUsed()) return "Unrecognized parking ticket.";
         return null;
 
     }

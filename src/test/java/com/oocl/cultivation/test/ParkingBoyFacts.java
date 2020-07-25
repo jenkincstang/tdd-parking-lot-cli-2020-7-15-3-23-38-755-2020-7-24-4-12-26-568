@@ -91,30 +91,6 @@ class ParkingBoyFacts {
         return cars;
     }
 
-    /**
-     * //given
-     * a parkingboy
-     * a wrong ticket
-     *
-     * //when
-     * fetchRespondingCar
-     *
-     * //then
-     * return null
-     */
-    @Test
-    public void should_return_tips_about_wrong_ticket_when_fetching_responding_car_given_a_parking_boy_with_a_wrong_ticket(){
-        //given
-        Ticket ticket = new Ticket(1);
-        ticket.setLegal(false);
-        ParkingBoy parkingBoy = new ParkingBoy();
-
-        //when
-        String result = parkingBoy.fetchRespondingCarWithWrongTicket(ticket);
-
-        //then
-        Assertions.assertEquals("Wrong Ticket",result);
-    }
 
     @Test
     public void should_return_tips_about_none_ticket_when_fetching_responding_car_given_a_parking_boy_with_no_ticket(){
@@ -211,4 +187,35 @@ class ParkingBoyFacts {
         //then
         Assertions.assertEquals("No Car",result);
     }
+
+    /**
+     * //given
+     * a wrong ticket
+     * a parkingboy
+     * //when
+     * fetchingCar
+     * //then
+     * return "Unrecognized parking ticket."
+     */
+
+    @Test
+    public void should_return_tips_about_wrong_ticket_when_fetching_responding_car_given_a_parking_boy_with_a_wrong_ticket(){
+        //given
+        Ticket illegalTicket = new Ticket(1);
+        illegalTicket.setLegal(false);
+
+        Ticket usedTicket = new Ticket(2);
+        usedTicket.setUsed(true);
+
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        String illegalTicketResult = parkingBoy.fetchRespondingCarWithWrongTicket(illegalTicket);
+        String usedTicketResult = parkingBoy.fetchRespondingCarWithWrongTicket(usedTicket);
+        //then
+        Assertions.assertEquals("Unrecognized parking ticket.",illegalTicketResult);
+        Assertions.assertEquals("Unrecognized parking ticket.",usedTicketResult);
+    }
+
+
 }
