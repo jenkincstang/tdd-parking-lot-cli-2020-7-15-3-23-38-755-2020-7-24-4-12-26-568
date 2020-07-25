@@ -31,6 +31,7 @@ public class ParkingBoy {
     }
 
     public String fetchRespondingCarWithUsedTicket(Ticket ticket) {
+        if(ticket.isUsed()) return "Used Ticket";
         return null;
     }
 }
