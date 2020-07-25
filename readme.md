@@ -7,7 +7,21 @@ Please read the story and do your implementation.
 As a customer, I would like to give my car to a parking boy so that he can help me park a car to the parking lot.
 
 AC1: The parking boy can park a car into the parking lot and returns a parking ticket. The customer can give the parking ticket back to the parking boy to fetch the car.
-
+//given
+a parkingboy
+a car
+//when
+parking car
+//then
+return a ticket
+====================
+//given
+a ticket
+a parkingboy
+//when
+fetching car
+//then
+return a car
 AC2: The parking boy can park multiple cars into on parking lot. And can fetch right car using correspond ticket.
 
 AC3: If the customer gives a wrong ticket (the parking boy does not provide the ticket) or does not give a ticket. Then no car should be fetched.
