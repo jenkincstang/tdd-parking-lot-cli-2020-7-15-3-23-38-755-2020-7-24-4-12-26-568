@@ -56,6 +56,18 @@ public class SuperSmartParkingBoyTest {
 
         return cars;
     }
+    @Test
+    public void should_return_tips_about_none_ticket_when_fetching_responding_car_given_a_super_smart_parking_boy_with_no_ticket(){
+        //given
+        Ticket ticket = null;
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+
+        //when
+        String result = superSmartParkingBoy.fetchRespondingCarWithNoTicket(ticket);
+
+        //then
+        Assertions.assertEquals("Please provide your parking ticket.",result);
+    }
 
 
     /**
