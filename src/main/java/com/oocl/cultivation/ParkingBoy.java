@@ -42,4 +42,8 @@ public class ParkingBoy {
     public String parkingParkedCar(Car car) {
         return "Parked Car";
     }
+
+    public String parkingNullCar(Car car) {
+        return null;
+    }
 }
