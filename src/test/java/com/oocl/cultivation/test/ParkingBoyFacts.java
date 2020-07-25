@@ -188,10 +188,8 @@ class ParkingBoyFacts {
         //given
         Car car = getParkedCar();
         ParkingBoy parkingBoy = new ParkingBoy();
-
         //when
         String result = parkingBoy.parkingParkedCar(car);
-
         //then
         Assertions.assertEquals("Parked Car",result);
     }
@@ -199,7 +197,6 @@ class ParkingBoyFacts {
     public Car getParkedCar(){
         Car car = new Car(1);
         car.setParked(true);
-
         return car;
     }
 }
