@@ -119,6 +119,16 @@ public class SuperSmartParkingBoyTest {
         car.setParked(true);
         return car;
     }
+    @Test
+    public void should_return_tips_about_no_car_when_parking_car_given_a_super_smart_parking_boy_with_no_car(){
+        //given
+        Car car = null;
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+        //when
+        String result = superSmartParkingBoy.parkingNullCar(car);
+        //then
+        Assertions.assertEquals("No Car",result);
+    }
 
 
 
