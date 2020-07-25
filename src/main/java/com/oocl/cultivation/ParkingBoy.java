@@ -49,7 +49,8 @@ public class ParkingBoy {
     }
 
     public String parkingNullCar(Car car) {
-        return "No Car";
+        if (car == null) return "No Car";
+        return null;
     }
 
     public String chooseParkingLotWithPosition(LinkedList<ParkingLot> parkingLots) {
