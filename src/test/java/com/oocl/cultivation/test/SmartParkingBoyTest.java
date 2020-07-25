@@ -70,6 +70,26 @@ public class SmartParkingBoyTest {
     }
 
     @Test
+    public void should_return_tips_about_used_ticket_when_fetching_responding_car_given_a_smart_parking_boy_with_a_used_ticket(){
+        //given
+        Ticket ticket = getUsedTicket();
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy();
+
+        //when
+        String result = smartParkingBoy.fetchRespondingCarWithUsedTicket(ticket);
+
+        //then
+        Assertions.assertEquals("Used Ticket",result);
+    }
+
+    public Ticket getUsedTicket(){
+        Ticket ticket = new Ticket(1);
+        ticket.setUsed(true);
+
+        return ticket;
+    }
+
+    @Test
     public void should_return_parking_lot_of_rank_x_contains_more_empty_positions_when_parking_car_given_a_smart_parking_boy_with_multiple_parking_lot(){
         //given
         LinkedList<ParkingLot> parkingLots = initParkingLots();
