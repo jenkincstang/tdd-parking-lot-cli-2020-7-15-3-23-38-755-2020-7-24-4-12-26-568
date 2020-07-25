@@ -27,6 +27,6 @@ public class ParkingBoy {
     }
 
     public String fetchRespondingCarWithNoTicket(Ticket ticket) {
-        return null;
+        return "No Ticket";
     }
 }
