@@ -20,6 +20,19 @@ public class SuperSmartParkingBoyTest {
         //then
         Assertions.assertEquals(new Ticket(1),resultTicket);
     }
+
+    @Test
+    public void should_return_a_car_when_fetching_car_given_a_super_smart_parking_boy_with_a_ticket(){
+        //given
+        Ticket ticket = new Ticket(1);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+
+        //when
+        Car resultCar = superSmartParkingBoy.fetchCar(ticket);
+
+        //then
+        Assertions.assertEquals(new Car(1),resultCar);
+    }
     /**
      * //given
      * a superSmartParkingBoy
