@@ -44,7 +44,8 @@ public class ParkingBoy {
     }
 
     public String parkingParkedCar(Car car) {
-        return "Parked Car";
+        if (car.isParked())return "Parked Car";
+        return null;
     }
 
     public String parkingNullCar(Car car) {
