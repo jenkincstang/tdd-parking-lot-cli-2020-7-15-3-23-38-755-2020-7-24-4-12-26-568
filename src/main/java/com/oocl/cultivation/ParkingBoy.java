@@ -29,4 +29,8 @@ public class ParkingBoy {
     public String fetchRespondingCarWithNoTicket(Ticket ticket) {
         return "No Ticket";
     }
+
+    public String fetchRespondingCarWithUsedTicket(Ticket ticket) {
+        return null;
+    }
 }

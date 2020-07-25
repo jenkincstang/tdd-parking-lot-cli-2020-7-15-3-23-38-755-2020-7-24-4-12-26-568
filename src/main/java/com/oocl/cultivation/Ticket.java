@@ -10,6 +10,7 @@ import java.util.Objects;
  */
 public class Ticket {
     private int id;
+    private boolean isUsed;
 
     public Ticket(int id){
         this.id = id;
@@ -21,6 +22,14 @@ public class Ticket {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isUsed() {
+        return isUsed;
+    }
+
+    public void setUsed(boolean used) {
+        isUsed = used;
     }
 
     @Override

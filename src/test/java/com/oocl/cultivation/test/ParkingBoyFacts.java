@@ -6,6 +6,7 @@ import com.oocl.cultivation.Ticket;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import javax.security.auth.callback.TextInputCallback;
 import java.util.LinkedList;
 
 class ParkingBoyFacts {
@@ -125,6 +126,21 @@ class ParkingBoyFacts {
 
         //then
         Assertions.assertEquals("No Ticket",result);
+    }
+
+    @Test
+    public void should_return_tips_about_used_ticket_when_fetching_responding_car_given_a_parking_boy_with_a_used_ticket(){
+        //given
+        Ticket ticket = new Ticket(1);
+        ticket.setUsed(true);
+
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        String result = parkingBoy.fetchRespondingCarWithUsedTicket(ticket);
+
+        //then
+        Assertions.assertEquals("Used Ticket",result);
     }
 
 }
