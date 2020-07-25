@@ -6,12 +6,12 @@ public class SuperSmartParkingBoy extends ParkingBoy {
     @Override
     public String chooseParkingLotWithPosition(LinkedList<ParkingLot> parkingLots) {
         int indexOfParkingLotWithMoreEmptyPosotion = 0;
-        int maxEmptyPosotionCurrent = 0;
+        int largerAvailablePositionRate = 0;
         for (int indexOfParkingLots = 0; indexOfParkingLots < parkingLots.size(); indexOfParkingLots++) {
             ParkingLot parkingLot = parkingLots.get(indexOfParkingLots);
-            if (parkingLot.getRemainingCapacity() > maxEmptyPosotionCurrent) {
+            if (parkingLot.getRemainingCapacity() / parkingLot.getCapacity() > largerAvailablePositionRate) {
                 indexOfParkingLotWithMoreEmptyPosotion = indexOfParkingLots;
-                maxEmptyPosotionCurrent = parkingLot.getRemainingCapacity();
+                largerAvailablePositionRate = parkingLot.getRemainingCapacity() / parkingLot.getCapacity();
             }
         }
         return "Parking lot of rank " + (indexOfParkingLotWithMoreEmptyPosotion + 1) +

@@ -12,6 +12,14 @@ public class ParkingLot {
         return remainingCapacity;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
     public void setRemainingCapacity(int remainingCapacity) {
         this.remainingCapacity = remainingCapacity;
     }
