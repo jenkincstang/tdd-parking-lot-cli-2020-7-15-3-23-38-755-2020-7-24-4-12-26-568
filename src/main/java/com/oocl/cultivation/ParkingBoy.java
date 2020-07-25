@@ -12,7 +12,7 @@ public class ParkingBoy {
     }
 
     public Car fetchCar(Ticket ticket) {
-        return new Car(1);
+        return new Car(ticket.getId());
     }
 
     public Car fetchRespondingCar(Ticket ticket, LinkedList<Car> cars) {

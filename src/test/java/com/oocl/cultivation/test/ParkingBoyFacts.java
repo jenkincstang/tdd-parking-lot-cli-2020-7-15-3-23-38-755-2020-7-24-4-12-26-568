@@ -32,7 +32,7 @@ class ParkingBoyFacts {
         Car resultCar = parkingBoy.fetchCar(ticket);
 
         //then
-        Assertions.assertEquals(new Car(1), resultCar);
+        Assertions.assertEquals(new Car(ticket.getId()), resultCar);
     }
 
     @Test
