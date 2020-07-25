@@ -23,6 +23,6 @@ public class ParkingBoy {
     }
 
     public String fetchRespondingCarWithWrongTicket(Ticket ticket) {
-        return null;
+        return "Wrong Ticket";
     }
 }
