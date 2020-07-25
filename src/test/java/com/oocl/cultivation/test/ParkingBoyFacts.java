@@ -1,9 +1,6 @@
 package com.oocl.cultivation.test;
 
-import com.oocl.cultivation.Car;
-import com.oocl.cultivation.ParkingBoy;
-import com.oocl.cultivation.ParkingLot;
-import com.oocl.cultivation.Ticket;
+import com.oocl.cultivation.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -259,5 +256,25 @@ class ParkingBoyFacts {
         parkingLots.add(thirdParkingLot);
 
         return parkingLots;
+    }
+
+    /**
+     * //given
+     * a parkingboy
+     * multiple parking lot
+     * //when
+     * parkingCar
+     * //then
+     * return "parking lot of rank x contains more empty positions"
+     */
+    @Test
+    public void should_return_parking_lot_of_rank_x_contains_more_empty_positions_when_parking_car_given_a_smart_parking_boy_with_multiple_parking_lot(){
+        //given
+        LinkedList<ParkingLot> parkingLots = initParkingLots();
+        SmartParkingBoy smartParkingBoy = new SmartParkingBoy();
+        //when
+        String result = smartParkingBoy.chooseParkingLotWithPosition(parkingLots);
+        //then
+        Assertions.assertEquals("Parking lot of rank 3 contains more empty positions",result);
     }
 }
