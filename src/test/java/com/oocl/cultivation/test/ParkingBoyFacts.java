@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.util.LinkedList;
 
 class ParkingBoyFacts {
+    private final int CAPACITY_OF_PARKING_LOT = 10;
+
     @Test
     public void should_return_a_ticket_when_parking_car_given_a_parking_boy_with_a_car() {
         //given
@@ -92,7 +94,7 @@ class ParkingBoyFacts {
     @Test
     public void should_return_tips_about_no_position_when_parking_car_given_a_parking_boy_and_a_parkinglot() {
         //given
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = new ParkingLot(CAPACITY_OF_PARKING_LOT);
         parkingLot.setRemainingCapacity(0);
 
         ParkingBoy parkingBoy = new ParkingBoy();
@@ -165,11 +167,11 @@ class ParkingBoyFacts {
 
     public LinkedList<ParkingLot> initParkingLots() {
         LinkedList<ParkingLot> parkingLots = new LinkedList<>();
-        ParkingLot firstParkingLot = new ParkingLot();
+        ParkingLot firstParkingLot = new ParkingLot(CAPACITY_OF_PARKING_LOT);
         firstParkingLot.setRemainingCapacity(0);
-        ParkingLot secondParkingLot = new ParkingLot();
+        ParkingLot secondParkingLot = new ParkingLot(CAPACITY_OF_PARKING_LOT);
         secondParkingLot.setRemainingCapacity(0);
-        ParkingLot thirdParkingLot = new ParkingLot();
+        ParkingLot thirdParkingLot = new ParkingLot(CAPACITY_OF_PARKING_LOT);
         thirdParkingLot.setRemainingCapacity(1);
         parkingLots.add(firstParkingLot);
         parkingLots.add(secondParkingLot);

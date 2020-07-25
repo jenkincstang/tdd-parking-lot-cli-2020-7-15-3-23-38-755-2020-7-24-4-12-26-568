@@ -1,11 +1,11 @@
 package com.oocl.cultivation;
 
 public class ParkingLot {
-    private final int MAX_CAPACITY = 10;
+    private int capacity;
     private int remainingCapacity;
 
-    public int getMAX_CAPACITY() {
-        return MAX_CAPACITY;
+    public ParkingLot(int capacity) {
+        this.capacity = capacity;
     }
 
     public int getRemainingCapacity() {
