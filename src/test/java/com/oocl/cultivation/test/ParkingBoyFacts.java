@@ -114,4 +114,17 @@ class ParkingBoyFacts {
         Assertions.assertEquals("Wrong Ticket",result);
     }
 
+    @Test
+    public void should_return_tips_about_none_ticket_when_fetching_responding_car_given_a_parking_boy_with_no_ticket(){
+        //given
+        Ticket ticket = null;
+        ParkingBoy parkingBoy = new ParkingBoy();
+
+        //when
+        String result = parkingBoy.fetchRespondingCarWithNoTicket(ticket);
+
+        //then
+        Assertions.assertEquals("No Ticket",result);
+    }
+
 }
