@@ -1,14 +1,25 @@
 package com.oocl.cultivation.test;
 
-import com.oocl.cultivation.ParkingLot;
-import com.oocl.cultivation.SmartParkingBoy;
-import com.oocl.cultivation.SuperSmartParkingBoy;
+import com.oocl.cultivation.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 
 public class SuperSmartParkingBoyTest {
+
+    @Test
+    public void should_return_a_ticket_when_parking_car_given_a_super_smart_parking_boy_with_a_car(){
+        //given
+        Car car = new Car(1);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+
+        //when
+        Ticket resultTicket = superSmartParkingBoy.parkCar(car);
+
+        //then
+        Assertions.assertEquals(new Ticket(1),resultTicket);
+    }
     /**
      * //given
      * a superSmartParkingBoy

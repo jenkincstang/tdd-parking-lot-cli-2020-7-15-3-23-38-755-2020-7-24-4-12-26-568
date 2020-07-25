@@ -7,15 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.LinkedList;
 
 public class SmartParkingBoyTest {
-    /**
-     * //given
-     * a parkingboy
-     * multiple parking lot
-     * //when
-     * parkingCar
-     * //then
-     * return "parking lot of rank x contains more empty positions"
-     */
+
     @Test
     public void should_return_a_ticket_when_parking_car_given_a_smart_parking_boy_with_a_car(){
         //given
