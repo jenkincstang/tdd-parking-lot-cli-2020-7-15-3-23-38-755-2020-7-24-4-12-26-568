@@ -33,6 +33,31 @@ public class SuperSmartParkingBoyTest {
         //then
         Assertions.assertEquals(new Car(1),resultCar);
     }
+
+    @Test
+    public void should_return_a_responding_car_when_fetching_responding_car_given_a_super_smart_parking_boy_with_a_ticket(){
+        //given
+        Ticket ticket = new Ticket(1);
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+        LinkedList<Car> cars = initCarsInParkingLot();
+
+        //when
+        Car resultCar = superSmartParkingBoy.fetchRespondingCar(ticket,cars);
+
+        //then
+        Assertions.assertEquals(new Car(1),resultCar);
+    }
+
+    public LinkedList<Car> initCarsInParkingLot(){
+        LinkedList<Car> cars = new LinkedList<>();
+        cars.add(new Car(1));
+        cars.add(new Car(2));
+        cars.add(new Car(3));
+
+        return cars;
+    }
+
+
     /**
      * //given
      * a superSmartParkingBoy
