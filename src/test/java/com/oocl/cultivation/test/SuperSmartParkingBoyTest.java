@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class SuperSmartParkingBoyTest {
     private final int CAPACITY_OF_PARKING_LOT = 10;
     @Test
@@ -161,6 +163,7 @@ public class SuperSmartParkingBoyTest {
         String result = superSmartParkingBoy.chooseParkingLotWithPosition(parkingLots);
         //then
         Assertions.assertEquals("Parking lot of rank 3 has a larger available position rate", result);
+       // assertThrows(SizeNotException.class, () -> superSmartParkingBoy.chooseParkingLotWithPosition(parkingLots)， “site not ”);
     }
 
     public LinkedList<ParkingLot> initParkingLots() {
